@@ -1,0 +1,55 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (arena.cpp:78), pid=13184, tid=16772
+#
+# JRE version: OpenJDK Runtime Environment Temurin-17.0.3+7 (17.0.3+7) (build 17.0.3+7)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-17.0.3+7 (17.0.3+7, mixed mode, tiered, compressed oops, compressed class ptrs, parallel gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-modules=ALL-SYSTEM --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -Dfile.encoding=utf8 -DwatchParentProcess=false -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=c:\Users\Pratap\AppData\Roaming\Code\User\workspaceStorage\ce280b74b2b93299440eed958f67fbba\redhat.java c:\Users\Pratap\.vscode\extensions\redhat.java-1.7.0-win32-x64\server\plugins\org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar -configuration c:\Users\Pratap\AppData\Roaming\Code\User\globalStorage\redhat.java\1.7.0\config_win -data c:\Users\Pratap\AppData\Roaming\Code\User\workspaceStorage\ce280b74b2b93299440eed958f67fbba\redhat.java\jdt_ws
+
+Host: AMD A6-6310 APU with AMD Radeon R4 Graphics    , 4 cores, 6G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1741)
+Time: Thu Jun 30 16:14:43 2022 India Standard Time elapsed time: 3212.532369 seconds (0d 0h 53m 32s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000023af2750f30):  JavaThread "C1 CompilerThread0" daemon [_thread_in_native, id=16772, stack(0x000000c80f100000,0x000000c80f200000)]
+
+
+Current CompileTask:
+C1:3212561 17951   !   3       org.eclipse.osgi.internal.framework.BundleContextImpl::dispatchEvent (558 bytes)
+
+Stack: [0x000000c80f100000,0x000000c80f200000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x675efa]
+V  [jvm.dll+0x830a24]
+V  [jvm.dll+0x8321ce]
+V  [jvm.dll+0x832833]
+V  [jvm.dll+0x2454b5]
+V  [jvm.dll+0xabfc0]
+V  [jvm.dll+0xac30c]
+V  [jvm.dll+0x17b78d]
+V  [jvm.dll+0x17d9ce]
+V  [jvm.dll+0x17b645]
+V  [jvm.dll+0x1756c6]
