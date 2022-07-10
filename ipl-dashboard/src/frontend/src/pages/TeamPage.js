@@ -2,7 +2,7 @@ import { React, useEffect, useState } from 'react';
 
 import { MatchDetailCard } from '../components/MatchDetailCard';
 import { MatchSmallCard } from '../components/MatchSmallCard';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import { PieChart } from 'react-minimal-pie-chart';
 
 import './TeamPage.scss';
@@ -48,7 +48,7 @@ export const TeamPage = () => {
       </div>
       {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} match={match}/>)}
       <div className='more-link'>
-        <a href='#'>More ></a>
+        <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}> More > </Link>
       </div>
     </div>
   );
